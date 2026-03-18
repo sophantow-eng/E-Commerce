@@ -8,6 +8,7 @@ export default function App() {
   const [products, setProducts] = useState([]);
   const [lang, setLang] = useState("th");
   const [search, setSearch] = useState("");
+  const [editing, setEditing] = useState(null);
 
   const text = {
     th: {
@@ -92,7 +93,11 @@ export default function App() {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <ProductTable products={filtered} />
+      <ProductTable
+        products={products}
+        reload={loadProducts}
+        setEditing={setEditing}
+      />
     </div>
   );
 }

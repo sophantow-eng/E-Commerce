@@ -6,7 +6,7 @@ export default function ProductTable({ products, reload, setEditing }) {
 
     await supabase.from("products").delete().eq("id", id);
 
-    reload();
+    reload();ด
   }
 
   return (
